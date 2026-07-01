@@ -42,9 +42,12 @@ export default async function handler(req, res) {
             }
         );
 
-        const data=await response.json();
+const data = await response.json();
 
-        return res.status(response.status).json(data);
+console.log("Brevo Status:", response.status);
+console.log("Brevo Response:", data);
+
+return res.status(response.status).json(data);
 
     }
 
