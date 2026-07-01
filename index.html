@@ -1,0 +1,1801 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="The Ultimate Creatine Guide by QUWA'A — Evidence-based, science-backed knowledge on the world's most researched performance supplement.">
+<title>The Ultimate Creatine Guide | QUWA'A</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #F8F3EB;
+  --bg2: #F0E9DC;
+  --card: #FAF7F2;
+  --card2: #EDE6D9;
+  --text: #1A1410;
+  --text2: #5C4A36;
+  --text3: #8B7355;
+  --accent: #7A9E7E;
+  --accent2: #8B6914;
+  --accent3: #C4A35A;
+  --border: rgba(90,70,40,0.12);
+  --shadow: rgba(90,70,40,0.10);
+  --nav-bg: rgba(248,243,235,0.92);
+  --glow: none;
+  --btn-glow: none;
+}
+html {
+  background:#0A0A0C;
+  color:#F0EEF8;
+}
+[data-theme="dark"] {
+  --bg: #0A0A0C;
+  --bg2: #0F0F14;
+  --card: #13131A;
+  --card2: #1A1A24;
+  --text: #F0EEF8;
+  --text2: #B0A8C8;
+  --text3: #6B6385;
+  --accent: #9B59FF;
+  --accent2: #3B9EFF;
+  --accent3: #FF2D55;
+  --border: rgba(155,89,255,0.15);
+  --shadow: rgba(155,89,255,0.10);
+  --nav-bg: rgba(10,10,12,0.92);
+  --glow: 0 0 30px rgba(155,89,255,0.15), 0 0 60px rgba(59,158,255,0.08);
+  --btn-glow: 0 0 20px rgba(155,89,255,0.4);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; font-size: 16px; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Inter', sans-serif;
+  transition: background 0.5s, color 0.5s;
+  overflow-x: hidden;
+  line-height: 1.6;
+}
+
+/* SCROLL PROGRESS */
+#scroll-progress {
+  position: fixed; top: 0; left: 0; height: 3px; z-index: 9999;
+  background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+  width: 0%; transition: width 0.1s linear;
+}
+
+/* NAVIGATION */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px) saturate(1.8);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.5s, border-color 0.5s;
+}
+.nav-inner {
+  max-width: 1300px; margin: 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 2rem; height: 68px;
+}
+.logo-placeholder {
+.logo{
+    font-family: 'Inter', sans-serif;
+    font-size: 2.2rem;
+    font-weight: 1200;
+    letter-spacing: 0.08em;
+    color: var(--text);
+
+    user-select: none;
+    cursor: default;
+
+    transition:
+        color .35s ease,
+        transform .35s ease;
+}
+
+.logo:hover{
+    transform: scale(1.04);
+    color: var(--accent);
+}
+}
+.nav-links {
+  display: flex; gap: 0.25rem; list-style: none;
+}
+.nav-links a {
+  text-decoration: none; color: var(--text2);
+  font-size: 0.78rem; font-weight: 500; letter-spacing: 0.06em;
+  text-transform: uppercase; padding: 6px 12px; border-radius: 6px;
+  transition: color 0.25s, background 0.25s;
+}
+.nav-links a:hover, .nav-links a.active {
+  color: var(--accent); background: rgba(155,89,255,0.07);
+}
+[data-theme="dark"] .nav-links a:hover, [data-theme="dark"] .nav-links a.active {
+  background: rgba(155,89,255,0.12);
+}
+
+/* THEME TOGGLE */
+#theme-toggle {
+  position: fixed; top: 50%; right: 1.5rem; z-index: 1100;
+  transform: translateY(-50%);
+  background: var(--card);
+  border: 1.5px solid var(--border);
+  border-radius: 50px;
+  width: 48px; height: 48px;
+  cursor: pointer; display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem; transition:
+    transform .45s cubic-bezier(.16,1,.3,1),
+    box-shadow .45s cubic-bezier(.16,1,.3,1),
+    border-color .35s,
+    background-color .35s,
+    color .35s;
+  box-shadow: 0 4px 24px var(--shadow);
+}
+#theme-toggle:hover { transform: translateY(-50%) scale(1.1); box-shadow: var(--btn-glow); }
+
+/* BACK TO TOP */
+#back-top {
+  position: fixed; bottom: 2rem; right: 1.5rem; z-index: 1100;
+  width: 46px; height: 46px; border-radius: 50%;
+  background: var(--accent); color: white;
+  border: none; cursor: pointer; font-size: 1.1rem;
+  box-shadow: 0 4px 20px var(--shadow);
+  opacity: 0; transform: translateY(20px);
+  transition:
+    transform .45s cubic-bezier(.16,1,.3,1),
+    box-shadow .45s cubic-bezier(.16,1,.3,1),
+    border-color .35s,
+    background-color .35s,
+    color .35s;
+  display: flex; align-items: center; justify-content: center;
+}
+#back-top.visible { opacity: 1; transform: translateY(0); }
+#back-top:hover { box-shadow: var(--btn-glow); transform: translateY(-3px); }
+
+/* SECTIONS */
+section { position: relative; }
+.section-inner { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
+
+/* REVEAL ANIMATIONS */
+.reveal {
+  opacity: 0; transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1);
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-left { opacity: 0; transform: translateX(-50px); transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1); }
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+.reveal-right { opacity: 0; transform: translateX(50px); transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1); }
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* ===== HERO ===== */
+#home {
+  min-height: 100vh; display: flex; align-items: center;
+  padding-top: 68px;
+  background: var(--bg);
+  overflow: hidden;
+  position: relative;
+}
+.hero-bg-gradient {
+  position: absolute; inset: 0; pointer-events: none;
+  background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(196,163,90,0.12) 0%, transparent 70%);
+  transition: background 0.5s;
+}
+[data-theme="dark"] .hero-bg-gradient {
+  background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(155,89,255,0.12) 0%, rgba(59,158,255,0.06) 50%, transparent 70%);
+}
+.hero-inner {
+    max-width:1200px;
+    margin:auto;
+
+    display:flex;
+    flex-direction:column;
+
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    min-height:100vh;
+
+    padding:4rem 2rem;
+}
+.hero-text{
+    display:flex;
+    flex-direction:column;
+
+    align-items:center;
+
+    text-align:center;
+
+    max-width:900px;
+
+    z-index:2;
+}
+.hero-eyebrow {
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.2em;
+  text-transform: uppercase; color: var(--accent);
+  margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem;
+}
+.hero-eyebrow::before { content: ''; display: block; width: 32px; height: 2px; background: var(--accent); }
+.hero-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size:clamp(5rem,9vw,8rem);
+  line-height: 0.95; letter-spacing: 0.02em;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+.hero-title span { color: var(--accent3); }
+.hero-subtitle {
+  font-size: 1.05rem; color: var(--text2); max-width:700px; line-height: 1.7;
+  margin-bottom: 2.5rem; font-weight: 400;
+}
+.hero-brand {
+  font-size: 0.75rem; color: var(--text3); text-transform: uppercase;
+  letter-spacing: 0.12em; margin-bottom: 2.5rem;
+}
+.hero-brand strong { color: var(--text); font-weight: 700; letter-spacing: 0.15em; }
+.hero-buttons{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin-top:2rem;
+}
+.btn-primary {
+  display: inline-flex;position: relative;
+overflow: hidden;z-index: 1;
+isolation: isolate; align-items: center; gap: 0.6rem;
+  background: var(--text);
+  color: var(--bg); padding: 14px 32px;
+  border: none; border-radius: 6px; cursor: pointer;
+  font-family: 'Inter', sans-serif; font-size: 0.82rem;
+  font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  text-decoration: none; transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    box-shadow .55s cubic-bezier(.16,1,.3,1),
+    border-color .45s,
+    background-color .45s,
+    color .45s;
+    
+}
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -120%;
+  width: 60%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255,255,255,.45),
+    transparent
+  );
+  transform: rotate(20deg);
+  animation: shine 4s infinite;
+}
+
+@keyframes shine {
+  0% {
+    left: -120%;
+  }
+  20% {
+    left: 150%;
+  }
+  100% {
+    left: 150%;
+  }
+}
+.btn-primary::before{
+    pointer-events: none;
+}
+
+.btn-primary:hover{
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 0 20px rgba(155,89,255,.35),
+        0 0 40px rgba(155,89,255,.2),
+        0 12px 35px rgba(0,0,0,.35);
+}
+[data-theme="dark"] .btn-primary {
+  background: var(--accent); color: white; box-shadow: var(--btn-glow);
+}
+[data-theme="dark"] .btn-primary:hover{
+    transform:translateY(-4px) scale(1.03);
+
+    box-shadow:
+        0 0 20px rgba(155,89,255,.4),
+        0 0 45px rgba(155,89,255,.25),
+        0 0 80px rgba(59,158,255,.18);
+}
+
+.hero-image-wrap {
+  display: flex; align-items: center; justify-content: center;
+  position: relative;
+}
+.hero-image-placeholder {
+  width: 420px; max-width: 100%; aspect-ratio: 3/4;
+  background: var(--card2);
+  border: 2px dashed var(--border);
+  border-radius: 20px;
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 1rem; color: var(--text3); font-size: 0.8rem;
+  text-align: center; padding: 2rem;
+  animation: float 5s ease-in-out infinite;
+  position: relative; overflow: hidden;
+}
+.hero-image-placeholder::before {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, transparent 0%, rgba(196,163,90,0.05) 100%);
+}
+[data-theme="dark"] .hero-image-placeholder::before {
+  background: linear-gradient(135deg, rgba(155,89,255,0.05) 0%, rgba(59,158,255,0.05) 100%);
+}
+.hero-image-placeholder .img-icon { font-size: 3rem; opacity: 0.4; }
+@keyframes float{
+
+0%,100%{
+transform:translateY(0px);
+}
+
+25%{
+transform:translateY(-10px);
+}
+
+50%{
+transform:translateY(-18px);
+}
+
+75%{
+transform:translateY(-8px);
+}
+
+}
+.scroll-indicator {
+  position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+  display: flex; flex-direction: column; align-items: center; gap: 0.5rem;
+  color: var(--text3); font-size: 0.68rem; letter-spacing: 0.15em; text-transform: uppercase;
+}
+.scroll-line {
+  width: 1.5px; height: 50px; background: linear-gradient(to bottom, var(--text3), transparent);
+  animation: scrollPulse 2s ease-in-out infinite;
+}
+@keyframes scrollPulse { 0%,100%{opacity:0.3;transform:scaleY(1)} 50%{opacity:1;transform:scaleY(0.7)} }
+
+/* ===== TRUST ===== */
+#trust {
+  padding: 100px 0;
+  background: var(--bg2);
+}
+.trust-stats {
+  display: grid; grid-template-columns: repeat(5, 1fr);
+  gap: 2px; margin-bottom: 4rem;
+}
+.stat-card {
+  padding: 2.5rem 1.5rem; text-align: center;
+  background: var(--card); border: 1px solid var(--border);
+  transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    box-shadow .55s cubic-bezier(.16,1,.3,1),
+    border-color .45s,
+    background-color .45s,
+    color .45s;
+}
+.stat-card:hover { background: var(--card2); box-shadow: var(--glow); }
+.stat-number {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 4vw, 4rem);
+  color: var(--accent); line-height: 1;
+  margin-bottom: 0.5rem;
+}
+[data-theme="dark"] .stat-number { text-shadow: 0 0 20px rgba(155,89,255,0.4); }
+.stat-label { font-size: 0.78rem; color: var(--text2); font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
+.trust-body { text-align: center; max-width: 700px; margin: 0 auto; }
+.trust-body p { color: var(--text2); font-size: 1.05rem; line-height: 1.75; }
+.trust-body p strong { color: var(--text); }
+.section-label {
+  font-size: 0.7rem; font-weight: 700; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1rem;
+}
+.section-title {
+  text-shadow: 0 0 18px rgba(155,89,255,.12);
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: var(--text); line-height: 1.05; margin-bottom: 1.5rem;
+  letter-spacing: 0.02em;
+}
+
+/* ===== WHY THIS GUIDE ===== */
+#guide {
+  padding: 120px 0; background: var(--bg);
+}
+.split-layout {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+  margin-bottom: 5rem;
+}
+.split-illustration {
+  aspect-ratio: 1; background: var(--card2); border-radius: 24px;
+  border: 1px solid var(--border); display: flex; align-items: center;
+  justify-content: center; color: var(--text3); font-size: 0.8rem;
+  text-align: center; padding: 2rem; position: relative; overflow: hidden;
+}
+.split-illustration::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(135deg, rgba(155,89,255,0.04), rgba(59,158,255,0.04));
+}
+.split-text p { color: var(--text2); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
+.learn-cards {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem;
+  margin-top: 2rem;
+}
+.learn-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 1.5rem; text-align: center; font-size: 0.82rem;
+  font-weight: 600; color: var(--text); letter-spacing: 0.04em;
+  transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    box-shadow .55s cubic-bezier(.16,1,.3,1),
+    border-color .45s,
+    background-color .45s,
+    color .45s; cursor: default;
+}
+.learn-card:hover .benefit-card:hover{
+    background: var(--card2);
+    transform: translateY(-10px) scale(1.02);
+
+    box-shadow:
+        0 20px 60px rgba(155,89,255,.18),
+        0 0 35px rgba(59,158,255,.12);
+}
+.benefit-card::before{
+content:"";
+position:absolute;
+inset:0;
+
+border-radius:inherit;
+
+padding:1px;
+
+background:linear-gradient(
+135deg,
+rgba(155,89,255,.6),
+transparent,
+rgba(59,158,255,.4)
+);
+
+-webkit-mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+mask:
+linear-gradient(#fff 0 0) content-box,
+linear-gradient(#fff 0 0);
+
+-webkit-mask-composite:xor;
+mask-composite:exclude;
+
+opacity:0;
+transition:.5s;
+}
+
+.benefit-card:hover::before{
+opacity:1;
+}
+[data-theme="dark"] .learn-card:hover { box-shadow: var(--glow); border-color: var(--accent); }
+.learn-card .lc-icon { font-size: 1.8rem; margin-bottom: 0.75rem; }
+
+/* ===== WHAT IS CREATINE / ENERGY FLOW ===== */
+#benefits {
+  padding: 120px 0; background: var(--bg2);
+}
+.energy-flow {
+  display: flex; flex-direction: column; align-items: center; gap: 0; margin: 3rem auto;
+  max-width: 260px;
+}
+.ef-node {
+  width: 100%; background: var(--card);
+  border: 1.5px solid var(--border); border-radius: 10px;
+  padding: 1rem 2rem; text-align: center;
+  font-weight: 600; font-size: 0.88rem; color: var(--text);
+  transition:
+    transform .45s cubic-bezier(.16,1,.3,1),
+    box-shadow .45s cubic-bezier(.16,1,.3,1),
+    border-color .35s,
+    background-color .35s,
+    color .35s; position: relative;
+}
+.ef-node.active { border-color: var(--accent); color: var(--accent); background: var(--card2); }
+[data-theme="dark"] .ef-node.active { box-shadow: 0 0 20px rgba(155,89,255,0.25); }
+.ef-arrow {
+  font-size: 1.5rem; color: var(--accent); opacity: 0.5; line-height: 1;
+  padding: 2px 0;
+}
+.two-col-section { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
+.creatine-desc { color: var(--text2); font-size: 1rem; line-height: 1.8; }
+.creatine-desc p { margin-bottom: 1rem; }
+
+/* ATP CYCLE */
+.atp-cycle {
+  display: flex; flex-direction: column; align-items: center; gap: 0;
+  max-width: 220px; margin: 3rem auto;
+}
+
+/* BENEFITS CARDS */
+.benefits-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+  margin-top: 3rem;
+}
+.benefit-card { 
+  position: relative; 
+  overflow: hidden;
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  padding: 2rem 1.5rem; transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    box-shadow .55s cubic-bezier(.16,1,.3,1),
+    border-color .45s,
+    background-color .45s,
+    color .45s; cursor: default;
+}
+.benefit-card:hover .benefit-card:hover{
+    transform: translateY(-10px) scale(1.02);
+
+    box-shadow:
+        0 20px 60px rgba(155,89,255,.18),
+        0 0 35px rgba(59,158,255,.12);
+}
+[data-theme="dark"] .benefit-card:hover { box-shadow: var(--glow); border-color: var(--accent); }
+.bc-icon { font-size: 2rem; margin-bottom: 1rem; }
+.bc-title { font-size: 0.88rem; font-weight: 700; color: var(--text); margin-bottom: 0.5rem; letter-spacing: 0.04em; text-transform: uppercase; }
+.bc-desc { font-size: 0.82rem; color: var(--text2); line-height: 1.6; }
+
+/* WHO SHOULD TAKE */
+#dosage {
+  padding: 120px 0; background: var(--bg);
+}
+.who-grid {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 3rem;
+}
+.who-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 2rem 1rem; text-align: center; transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    box-shadow .55s cubic-bezier(.16,1,.3,1),
+    border-color .45s,
+    background-color .45s,
+    color .45s;
+}
+.who-card:hover .benefit-card:hover{
+    transform: translateY(-10px) scale(1.02);
+
+    box-shadow:
+        0 20px 60px rgba(155,89,255,.18),
+        0 0 35px rgba(59,158,255,.12);
+}
+[data-theme="dark"] .who-card:hover { box-shadow: var(--glow); }
+.who-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.who-label { font-size: 0.8rem; font-weight: 600; color: var(--text); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* CREATINE COMPARISON */
+.compare-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem;
+}
+.compare-card {
+  background: var(--card); border: 1.5px solid var(--border); border-radius: 16px;
+  padding: 2rem; transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    box-shadow .55s cubic-bezier(.16,1,.3,1),
+    border-color .45s,
+    background-color .45s,
+    color .45s; position: relative;
+}
+.compare-card.best {
+  border-color: var(--accent3);
+}
+[data-theme="dark"] .compare-card.best { box-shadow: 0 0 40px rgba(196,163,90,0.12); }
+.best-badge {
+  position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  background: var(--accent3); color: var(--bg);
+  font-size: 0.65rem; font-weight: 800; letter-spacing: 0.1em;
+  text-transform: uppercase; padding: 4px 14px; border-radius: 20px;
+}
+.cc-title { font-size: 1rem; font-weight: 700; color: var(--text); margin-bottom: 0.75rem; }
+.cc-rating { display: flex; gap: 3px; margin-bottom: 1rem; }
+.cc-rating span { font-size: 0.9rem; }
+.cc-desc { font-size: 0.82rem; color: var(--text2); line-height: 1.6; }
+
+/* DOSAGE TIMELINE */
+#myths {
+  padding: 120px 0; background: var(--bg2);
+}
+.dose-options { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+.dose-option {
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  padding: 2.5rem; position: relative; overflow: visible;
+}
+.dose-option::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+}
+.dose-label { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 1rem; }
+.dose-title { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--text); margin-bottom: 1.5rem; }
+.dose-steps { display: flex; flex-direction: column; gap: 0.75rem; }
+.dose-step {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 0.75rem; background: var(--bg2); border-radius: 8px;
+}
+.ds-num {
+  width: 28px; height: 28px; border-radius: 50%; background: var(--accent);
+  color: white; font-size: 0.72rem; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.ds-text { font-size: 0.85rem; color: var(--text2); line-height: 1.5; }
+.ds-text strong { color: var(--text); display: block; }
+
+/* CLOCK SECTION */
+.timing-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin: 3rem 0; }
+.timing-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 2rem; text-align: center; cursor: pointer; transition:
+    transform .45s cubic-bezier(.16,1,.3,1),
+    box-shadow .45s cubic-bezier(.16,1,.3,1),
+    border-color .35s,
+    background-color .35s,
+    color .35s;
+}
+.timing-card:hover, .timing-card.active {
+  border-color: var(--accent); background: var(--card2);
+  transform: translateY(-4px); box-shadow: 0 15px 40px var(--shadow);
+}
+[data-theme="dark"] .timing-card:hover, [data-theme="dark"] .timing-card.active {
+  box-shadow: 0 0 30px rgba(155,89,255,0.2);
+}
+.tc-icon { font-size: 2.5rem; margin-bottom: 0.75rem; }
+.tc-label { font-size: 0.82rem; font-weight: 600; color: var(--text); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+.tc-note { font-size: 0.76rem; color: var(--text3); line-height: 1.5; }
+.timing-conclusion {
+  text-align: center; padding: 2rem; background: var(--card);
+  border: 1px solid var(--border); border-radius: 12px;
+  font-style: italic; color: var(--text2); font-size: 1rem; line-height: 1.7;
+}
+
+/* HOW TO TAKE / DRINKS */
+.drinks-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; justify-content: center; margin-top: 3rem; }
+.drink-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 1.5rem 2rem; text-align: center; transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    box-shadow .55s cubic-bezier(.16,1,.3,1),
+    border-color .45s,
+    background-color .45s,
+    color .45s; min-width: 100px;
+}
+.drink-card:hover .benefit-card:hover{
+    transform: translateY(-10px) scale(1.02);
+
+    box-shadow:
+        0 20px 60px rgba(155,89,255,.18),
+        0 0 35px rgba(59,158,255,.12);
+}
+[data-theme="dark"] .drink-card:hover { box-shadow: var(--glow); }
+.drink-icon { font-size: 2.5rem; margin-bottom: 0.5rem; }
+.drink-label { font-size: 0.75rem; font-weight: 600; color: var(--text2); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* HYDRATION */
+#faq {
+  padding: 120px 0; background: var(--bg);
+}
+.hydration-section { display: grid; grid-template-columns: auto 1fr; gap: 4rem; align-items: center; }
+.water-bottle-wrap { display: flex; justify-content: center; }
+.water-bottle {
+  width: 90px; height: 200px; border: 3px solid var(--accent2);
+  border-radius: 12px 12px 20px 20px; position: relative; overflow: hidden;
+  background: var(--card);
+}
+.water-fill {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(59,158,255,0.6), rgba(59,158,255,0.2));
+  height: 0%; transition: height 2s cubic-bezier(.16,1,.3,1);
+  border-radius: 0 0 16px 16px;
+}
+.water-bottle::before {
+  content: ''; position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+  width: 30px; height: 12px; border: 3px solid var(--accent2);
+  border-bottom: none; border-radius: 4px 4px 0 0;
+}
+.hydration-text h3 { font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem; color: var(--text); margin-bottom: 1rem; }
+.hydration-text p { color: var(--text2); line-height: 1.8; margin-bottom: 0.75rem; }
+
+/* RESULTS TIMELINE */
+.timeline { margin-top: 3rem; position: relative; }
+.timeline::before {
+  content: ''; position: absolute; left: 120px; top: 0; bottom: 0;
+  width: 2px; background: linear-gradient(to bottom, var(--accent), var(--accent2));
+}
+.timeline-item {
+  display: grid; grid-template-columns: 120px auto 1fr; gap: 2rem;
+  align-items: center; margin-bottom: 2.5rem; cursor: pointer;
+}
+.tl-week {
+  text-align: right; font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.5rem; color: var(--text3); letter-spacing: 0.05em;
+}
+.tl-dot {
+  width: 16px; height: 16px; border-radius: 50%; border: 2.5px solid var(--accent);
+  background: var(--bg); position: relative; z-index: 1; flex-shrink: 0;
+  transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    box-shadow .55s cubic-bezier(.16,1,.3,1),
+    border-color .45s,
+    background-color .45s,
+    color .45s;
+}
+.timeline-item:hover .tl-dot, .timeline-item.active .tl-dot {
+  background: var(--accent); box-shadow: 0 0 0 6px rgba(155,89,255,0.15);
+}
+.tl-content { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 1.25rem 1.5rem; transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    box-shadow .55s cubic-bezier(.16,1,.3,1),
+    border-color .45s,
+    background-color .45s,
+    color .45s; }
+.timeline-item:hover .tl-content { border-color: var(--accent); }
+.tl-title { font-size: 0.82rem; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.35rem; }
+.tl-desc { font-size: 0.8rem; color: var(--text2); line-height: 1.5; }
+
+/* MISTAKES */
+#about {
+  padding: 120px 0; background: var(--bg2);
+}
+.mistakes-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; margin-top: 3rem; }
+.mistake-card {
+  background: var(--card); border: 1px solid var(--border); border-left: 4px solid var(--accent3);
+  border-radius: 0 12px 12px 0; padding: 1.5rem;
+  transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    box-shadow .55s cubic-bezier(.16,1,.3,1),
+    border-color .45s,
+    background-color .45s,
+    color .45s;
+}
+[data-theme="dark"] .mistake-card { border-left-color: var(--accent3); }
+.mistake-card:hover { transform: translateX(6px); box-shadow: 0 8px 30px var(--shadow); }
+.mc-icon { font-size: 1.5rem; margin-bottom: 0.5rem; }
+.mc-title { font-size: 0.82rem; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.35rem; }
+.mc-desc { font-size: 0.78rem; color: var(--text2); line-height: 1.5; }
+
+/* MYTH vs FACT FLIP CARDS */
+.myths-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.flip-card { perspective: 1000px; height: 180px; cursor: pointer; }
+.flip-inner {
+  position: relative; width: 100%; height: 100%;
+  transition: transform 0.6s cubic-bezier(.16,1,.3,1);
+  transform-style: preserve-3d;
+}
+.flip-card:hover .flip-inner, .flip-card.flipped .flip-inner { transform: rotateY(180deg); }
+.flip-front, .flip-back {
+  position: absolute; inset: 0; border-radius: 14px;
+  backface-visibility: hidden; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; text-align: center; padding: 2rem;
+  border: 1px solid var(--border);
+}
+.flip-front { background: var(--card); }
+.flip-back { background: var(--card2); transform: rotateY(180deg); }
+.flip-myth { font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; }
+.flip-tag {
+  font-size: 0.65rem; font-weight: 700; letter-spacing: 0.1em;
+  text-transform: uppercase; background: var(--border);
+  color: var(--text3); padding: 3px 10px; border-radius: 20px;
+}
+.flip-verdict {
+  font-family: 'Bebas Neue', sans-serif; font-size: 2.5rem;
+  letter-spacing: 0.05em; margin-bottom: 0.25rem;
+}
+.flip-verdict.false { color: #EF4444; }
+.flip-verdict.inconclusive { color: var(--accent3); font-size: 1.6rem; }
+.flip-fact { font-size: 0.76rem; color: var(--text2); line-height: 1.5; }
+
+/* SIDE EFFECTS TRAFFIC LIGHT */
+.traffic-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+.traffic-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+  padding: 2.5rem 2rem; text-align: center; transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    box-shadow .55s cubic-bezier(.16,1,.3,1),
+    border-color .45s,
+    background-color .45s,
+    color .45s;
+}
+.traffic-card:hover .benefit-card:hover{
+    transform: translateY(-10px) scale(1.02);
+
+    box-shadow:
+        0 20px 60px rgba(155,89,255,.18),
+        0 0 35px rgba(59,158,255,.12);
+}
+.traffic-dot { width: 50px; height: 50px; border-radius: 50%; margin: 0 auto 1.25rem; }
+.traffic-dot.green { background: #22C55E; box-shadow: 0 0 20px rgba(34,197,94,0.4); }
+.traffic-dot.yellow { background: #EAB308; box-shadow: 0 0 20px rgba(234,179,8,0.4); }
+.traffic-dot.red { background: #EF4444; box-shadow: 0 0 20px rgba(239,68,68,0.4); }
+.traffic-title { font-size: 0.85rem; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 1rem; }
+.traffic-list { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+.traffic-list li { font-size: 0.78rem; color: var(--text2); line-height: 1.5; }
+
+/* BUYING GUIDE */
+.buying-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 3rem; }
+.buying-col { background: var(--card); border: 1px solid var(--border); border-radius: 16px; padding: 2rem; }
+.buying-col.choose { border-top: 3px solid #22C55E; }
+.buying-col.avoid { border-top: 3px solid #EF4444; }
+.buying-col-title {
+  font-size: 0.75rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
+  margin-bottom: 1.25rem;
+}
+.buying-col.choose .buying-col-title { color: #22C55E; }
+.buying-col.avoid .buying-col-title { color: #EF4444; }
+.buying-list { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+.buying-list li { display: flex; align-items: flex-start; gap: 0.75rem; font-size: 0.85rem; color: var(--text2); line-height: 1.5; }
+.buying-list li::before { content: '✓'; color: #22C55E; font-weight: 700; flex-shrink: 0; }
+.buying-col.avoid .buying-list li::before { content: '✕'; color: #EF4444; }
+
+/* CHEAT SHEET */
+#contact {
+  padding: 120px 0; background: var(--bg);
+}
+.cheat-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-top: 3rem; }
+.cheat-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 14px;
+  padding: 1.5rem; transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    box-shadow .55s cubic-bezier(.16,1,.3,1),
+    border-color .45s,
+    background-color .45s,
+    color .45s;
+}
+.cheat-card:hover .benefit-card:hover{
+    transform: translateY(-10px) scale(1.02);
+
+    box-shadow:
+        0 20px 60px rgba(155,89,255,.18),
+        0 0 35px rgba(59,158,255,.12);
+}
+.cheat-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text3); margin-bottom: 0.5rem; }
+.cheat-value { font-size: 1rem; font-weight: 700; color: var(--accent); margin-bottom: 0.35rem; }
+.cheat-note { font-size: 0.75rem; color: var(--text3); line-height: 1.5; }
+
+/* ABOUT SECTION */
+.about-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: center; }
+.about-photo{
+    aspect-ratio:3/4;
+
+    background:transparent;
+
+    border:none;
+
+    border-radius:20px;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    overflow:hidden;
+
+    box-shadow:
+        0 0 25px rgba(155,89,255,.22),
+        0 0 60px rgba(59,158,255,.12);
+
+    transition:.45s cubic-bezier(.16,1,.3,1);
+}
+.about-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    border-radius:20px;
+
+    transition:transform .45s ease;
+
+    display:block;
+}
+.about-photo:hover{
+    transform:translateY(-6px);
+
+    box-shadow:
+        0 0 35px rgba(155,89,255,.35),
+        0 0 80px rgba(59,158,255,.18);
+}
+
+.about-photo:hover img{
+    transform:scale(1.04);
+}
+
+.about-photo .img-icon { font-size: 3rem; opacity: 0.4; }
+.about-text p { color: var(--text2); font-size: 1rem; line-height: 1.8; margin-bottom: 1rem; }
+.about-icons { display: flex; gap: 1.5rem; margin-top: 2.5rem; flex-wrap: wrap; }
+.about-icon-card {
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 1.25rem 1.5rem; text-align: center; flex: 1; min-width: 100px;
+  transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    box-shadow .55s cubic-bezier(.16,1,.3,1),
+    border-color .45s,
+    background-color .45s,
+    color .45s;
+}
+.about-icon-card:hover { transform: translateY(-4px); box-shadow: 0 12px 30px var(--shadow); }
+.aic-icon { font-size: 1.75rem; margin-bottom: 0.5rem; }
+.aic-label { font-size: 0.72rem; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 0.06em; }
+
+/* FINAL QUOTE */
+.final-section {
+  padding: 120px 0; background: var(--bg2);
+  text-align: center;
+}
+.quote-block { max-width: 800px; margin: 0 auto 5rem; }
+.quote-text {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  color: var(--text); line-height: 1.35;
+  font-style: italic; margin-bottom: 1.5rem;
+}
+.quote-attr {
+  font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--accent3);
+}
+.final-body { max-width: 600px; margin: 0 auto; color: var(--text2); line-height: 1.8; font-size: 1rem; }
+.final-body p { margin-bottom: 0.75rem; }
+.final-body strong { color: var(--text); }
+
+/* FOOTER */
+footer {
+  background: var(--bg); border-top: 1px solid var(--border);
+  padding: 4rem 0 2rem; text-align: center;
+}
+.footer-logo { font-family: 'Bebas Neue', sans-serif; font-size: 0.75rem; letter-spacing: 0.1em; color: var(--text3); border: 1px solid var(--border); padding: 5px 14px; border-radius: 4px; display: inline-block; margin-bottom: 0.75rem; }
+.footer-tagline { font-size: 0.72rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text3); margin-bottom: 2rem; }
+.footer-socials { display: flex; align-items: center; justify-content: center; gap: 1rem; margin-bottom: 2rem; }
+.social-btn {
+  font-size: 1.15rem;
+  transition: all .4s cubic-bezier(.16,1,.3,1);
+  width: 42px; height: 42px; border-radius: 50%;
+  background: var(--card); border: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  text-decoration: none; font-size: 1.1rem; color: var(--text2);
+  transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    box-shadow .55s cubic-bezier(.16,1,.3,1),
+    border-color .45s,
+    background-color .45s,
+    color .45s;
+}
+.social-btn i{
+    transition: transform .35s ease;
+}
+
+.social-btn:hover i{
+    transform: scale(1.15);
+}
+
+.social-btn:hover { border-color: var(--accent); color: var(--accent); transform: translateY(-3px); box-shadow: var(--btn-glow); }
+.email-link { font-size: 0.82rem; color: var(--text2); text-decoration: none; letter-spacing: 0.02em; }
+.email-link:hover { color: var(--accent); }
+.copyright { margin-top: 2rem; font-size: 0.7rem; color: var(--text3); letter-spacing: 0.05em; }
+
+/* DIVIDERS */
+.section-divider {
+  width: 60px; height: 3px; margin-bottom: 2rem;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  border-radius: 2px;
+}
+
+/* RESPONSIVE */
+@media (max-width: 1024px) {
+  .trust-stats { grid-template-columns: repeat(3,1fr); }
+  .hero-inner, .split-layout, .two-col-section, .about-grid, .hydration-section { grid-template-columns: 1fr; gap: 3rem; }
+  .hero-image-wrap { order: -1; }
+  .hero-image-placeholder { width: 100%; max-width: 380px; aspect-ratio: 4/3; }
+  .learn-cards, .benefits-grid, .compare-grid, .myths-grid, .traffic-grid, .buying-cols { grid-template-columns: 1fr 1fr; }
+  .who-grid, .cheat-grid { grid-template-columns: repeat(2,1fr); }
+  .timing-grid, .mistakes-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .trust-stats { grid-template-columns: 1fr 1fr; }
+  .learn-cards, .benefits-grid, .compare-grid, .myths-grid, .traffic-grid, .buying-cols, .who-grid, .cheat-grid, .timing-grid, .mistakes-grid, .dose-options { grid-template-columns: 1fr; }
+  .timeline::before { left: 80px; }
+  .timeline-item { grid-template-columns: 80px auto 1fr; gap: 1rem; }
+  .about-icons { flex-direction: row; }
+  .hero-title { font-size: 3.5rem; }
+}
+
+/* HAMBURGER */
+.hamburger {
+  display: none; flex-direction: column; gap: 5px; cursor: pointer;
+  padding: 8px;
+}
+.hamburger span { width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition:
+    transform .55s cubic-bezier(.16,1,.3,1),
+    box-shadow .55s cubic-bezier(.16,1,.3,1),
+    border-color .45s,
+    background-color .45s,
+    color .45s; }
+@media (max-width: 768px) { .hamburger { display: flex; } }
+
+/* MOBILE MENU */
+.mobile-menu {
+  display: none; position: fixed; top: 68px; left: 0; right: 0;
+  background: var(--nav-bg); backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border); padding: 1rem;
+  flex-direction: column; gap: 0.25rem; z-index: 999;
+}
+.mobile-menu.open { display: flex; }
+.mobile-menu a {
+  text-decoration: none; color: var(--text2);
+  font-size: 0.82rem; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase; padding: 10px 16px; border-radius: 8px;
+  transition: all 0.25s;
+}
+.mobile-menu a:hover { color: var(--accent); background: rgba(155,89,255,0.08); }
+
+/* LOADING SCREEN */
+#loader {
+  position: fixed; inset: 0; z-index: 9999;
+  background: var(--bg); display: flex; align-items: center;
+  justify-content: center; flex-direction: column; gap: 1rem;
+  transition: opacity 0.5s, visibility 0.5s;
+}
+#loader.done { opacity: 0; visibility: hidden; }
+.loader-text {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.5rem; letter-spacing: 0.15em;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  background-clip: text;
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+}
+.loader-bar-wrap { width: 200px; height: 2px; background: var(--border); border-radius: 2px; overflow: hidden; }
+.loader-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent), var(--accent2)); transition: width 0.8s; }
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-text">QUWA'A</div>
+  <div class="loader-bar-wrap"><div class="loader-bar" id="loader-bar"></div></div>
+</div>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- THEME TOGGLE -->
+<button id="theme-toggle" aria-label="Toggle theme" title="Toggle theme">🌙</button>
+
+<!-- BACK TO TOP -->
+<button id="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- NAVIGATION -->
+<nav id="navbar">
+  <div class="nav-inner">
+    <div class="logo">QUWA'A</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#guide">Guide</a></li>
+      <li><a href="#benefits">Benefits</a></li>
+      <li><a href="#dosage">Dosage</a></li>
+      <li><a href="#myths">Myths</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="hamburger" id="hamburger" onclick="toggleMobile()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#home" onclick="closeMobile()">Home</a>
+  <a href="#guide" onclick="closeMobile()">Guide</a>
+  <a href="#benefits" onclick="closeMobile()">Benefits</a>
+  <a href="#dosage" onclick="closeMobile()">Dosage</a>
+  <a href="#myths" onclick="closeMobile()">Myths</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  <a href="#about" onclick="closeMobile()">About</a>
+  <a href="#contact" onclick="closeMobile()">Contact</a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section id="home">
+  <div class="hero-bg-gradient"></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-eyebrow reveal">The Definitive Resource</div>
+      <h1 class="hero-title reveal">THE<br>ULTIMATE<br><span>CREATINE</span><br>GUIDE</h1>
+      <p class="hero-subtitle reveal">Everything You Need To Know About The World's Most Researched Performance Supplement.</p>
+      <p class="hero-brand reveal">Created by <strong>QUWA'A</strong> — Fitness Influencer</p>
+      <div class="hero-buttons">
+    <a href="#guide" class="btn-primary reveal" id="cta-btn">
+        Start Reading <span>→</span>
+    </a>
+</div>
+    </div>
+  <div class="scroll-indicator">
+    <span>Scroll</span>
+    <div class="scroll-line"></div>
+  </div>
+</section>  
+
+<!-- ===== TRUST ===== -->
+<section id="trust">
+  <div class="section-inner">
+    <div class="trust-stats">
+      <div class="stat-card reveal">
+        <div class="stat-number" data-count="1000" data-suffix="+">0</div>
+        <div class="stat-label">Scientific Studies</div>
+      </div>
+      <div class="stat-card reveal" style="transition-delay:.1s">
+        <div class="stat-number" data-count="30" data-suffix="+">0</div>
+        <div class="stat-label">Years of Research</div>
+      </div>
+      <div class="stat-card reveal" style="transition-delay:.2s">
+        <div class="stat-number" data-count="95" data-suffix="%">0</div>
+        <div class="stat-label">Positive Findings</div>
+      </div>
+      <div class="stat-card reveal" style="transition-delay:.3s">
+        <div class="stat-number" data-suffix="">#1</div>
+        <div class="stat-label">Performance Supplement</div>
+      </div>
+      <div class="stat-card reveal" style="transition-delay:.4s">
+        <div class="stat-number" data-suffix="">✓</div>
+        <div class="stat-label">Safe for Healthy Adults</div>
+      </div>
+    </div>
+    <div class="trust-body reveal">
+      <p><strong>Creatine isn't hype.</strong> It is one of the most researched supplements ever created, backed by decades of scientific evidence and recommended by leading sports nutrition organisations worldwide.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHY THIS GUIDE ===== -->
+<section id="guide">
+  <div class="section-inner">
+    <div class="split-layout">
+      <div class="split-illustration reveal-left" style="min-height:380px;">
+        <div style="text-align:center;z-index:1">
+          <div style="font-size:5rem;margin-bottom:1rem">⚗️</div>
+          <div style="font-size:0.82rem;color:var(--text3)">Science cuts through the noise</div>
+        </div>
+      </div>
+      <div class="split-text reveal-right">
+        <div class="section-label">The Problem</div>
+        <h2 class="section-title">Why This Guide Exists</h2>
+        <div class="section-divider"></div>
+        <p>The fitness industry profits from confusion.</p>
+        <p>Some claim creatine damages kidneys. Others compare it to steroids. Many companies sell expensive "advanced" formulas that offer little to no benefit over standard creatine monohydrate.</p>
+        <p>This guide cuts through the misinformation and gives you evidence-based answers you can trust.</p>
+        <div class="learn-cards">
+          <div class="learn-card"><div class="lc-icon">🔬</div>What You'll Learn</div>
+          <div class="learn-card"><div class="lc-icon">❌</div>Why Misinformation Spreads</div>
+          <div class="learn-card"><div class="lc-icon">📊</div>Science vs Marketing</div>
+          <div class="learn-card"><div class="lc-icon">✅</div>How To Use It Correctly</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHAT IS CREATINE / BENEFITS ===== -->
+<section id="benefits">
+  <div class="section-inner">
+    <div class="two-col-section" style="margin-bottom:6rem">
+      <div class="reveal-left">
+        <div class="section-label">The Science</div>
+        <h2 class="section-title">What Is Creatine?</h2>
+        <div class="section-divider"></div>
+        <div class="creatine-desc">
+          <p>Creatine is a naturally occurring compound stored primarily inside your muscles.</p>
+          <p>Its primary role is to regenerate ATP — your body's fastest energy source during explosive exercise.</p>
+          <p>More ATP means greater strength, better performance, and improved recovery between sets.</p>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="energy-flow" id="energy-flow">
+          <div class="ef-node" data-delay="0">🍖 Food</div>
+          <div class="ef-arrow">↓</div>
+          <div class="ef-node" data-delay="200">⚗️ Creatine</div>
+          <div class="ef-arrow">↓</div>
+          <div class="ef-node" data-delay="400">🔋 Phosphocreatine</div>
+          <div class="ef-arrow">↓</div>
+          <div class="ef-node" data-delay="600">⚡ ATP</div>
+          <div class="ef-arrow">↓</div>
+          <div class="ef-node" data-delay="800">💥 Energy</div>
+          <div class="ef-arrow">↓</div>
+          <div class="ef-node" data-delay="1000">💪 Strength</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="two-col-section" style="margin-bottom:6rem">
+      <div class="reveal-left">
+        <div class="section-label">The Mechanism</div>
+        <h2 class="section-title">How Creatine Works</h2>
+        <div class="section-divider"></div>
+        <div class="creatine-desc">
+          <p>During intense exercise, ATP is broken down into ADP. Creatine phosphate donates a phosphate group to ADP, rapidly regenerating ATP and extending your power output.</p>
+          <p>This cycle is what makes creatine uniquely effective for high-intensity, short-duration efforts.</p>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <div class="atp-cycle" id="atp-cycle">
+          <div class="ef-node atp-node">⚡ ATP</div>
+          <div class="ef-arrow">↓ <span style="font-size:0.7rem;color:var(--text3)">Used during exercise</span></div>
+          <div class="ef-node atp-node" data-delay="300">🔄 ADP</div>
+          <div class="ef-arrow">↓ <span style="font-size:0.7rem;color:var(--text3)">Creatine donates phosphate</span></div>
+          <div class="ef-node atp-node" data-delay="600">⚗️ Creatine</div>
+          <div class="ef-arrow">↓</div>
+          <div class="ef-node atp-node active" data-delay="900">⚡ ATP Restored</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="section-label">Key Benefits</div>
+      <h2 class="section-title">What Creatine Does</h2>
+      <div class="section-divider"></div>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-card reveal" style="transition-delay:.05s"><div class="bc-icon">🏋️</div><div class="bc-title">More Strength</div><div class="bc-desc">Consistent creatine use leads to measurable increases in 1RM strength across compound lifts.</div></div>
+      <div class="benefit-card reveal" style="transition-delay:.1s"><div class="bc-icon">💪</div><div class="bc-title">Muscle Growth</div><div class="bc-desc">Greater training volume enabled by creatine directly supports lean muscle hypertrophy over time.</div></div>
+      <div class="benefit-card reveal" style="transition-delay:.15s"><div class="bc-icon">⚡</div><div class="bc-title">Faster Recovery</div><div class="bc-desc">Creatine reduces muscle cell damage and inflammation, allowing you to return to peak output sooner.</div></div>
+      <div class="benefit-card reveal" style="transition-delay:.2s"><div class="bc-icon">📈</div><div class="bc-title">More Training Volume</div><div class="bc-desc">More ATP available means more reps, more sets, more total work — the driver of progressive overload.</div></div>
+      <div class="benefit-card reveal" style="transition-delay:.25s"><div class="bc-icon">🏃</div><div class="bc-title">Sprint Performance</div><div class="bc-desc">Significant improvements in repeated sprint ability and peak power output have been documented.</div></div>
+      <div class="benefit-card reveal" style="transition-delay:.3s"><div class="bc-icon">💥</div><div class="bc-title">Power Output</div><div class="bc-desc">Athletes across disciplines report increased explosiveness, jump height, and force production.</div></div>
+      <div class="benefit-card reveal" style="transition-delay:.35s"><div class="bc-icon">💧</div><div class="bc-title">Cell Hydration</div><div class="bc-desc">Creatine draws water into muscle cells, creating an anabolic environment conducive to growth.</div></div>
+      <div class="benefit-card reveal" style="transition-delay:.4s"><div class="bc-icon">🔥</div><div class="bc-title">Fuller Muscles</div><div class="bc-desc">Intracellular hydration gives muscles a fuller, denser appearance — not bloating, but volumisation.</div></div>
+      <div class="benefit-card reveal" style="transition-delay:.45s"><div class="bc-icon">🧠</div><div class="bc-title">Cognitive Benefits</div><div class="bc-desc">Emerging research suggests creatine may support mental energy, especially under sleep deprivation.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== DOSAGE / WHO ===== -->
+<section id="dosage">
+  <div class="section-inner">
+    <div class="reveal" style="margin-bottom:4rem">
+      <div class="section-label">Who Benefits</div>
+      <h2 class="section-title">Who Should Take Creatine</h2>
+      <div class="section-divider"></div>
+      <div class="who-grid">
+        <div class="who-card"><div class="who-icon">🥇</div><div class="who-label">Gym Beginners</div></div>
+        <div class="who-card"><div class="who-icon">🏆</div><div class="who-label">Intermediate Lifters</div></div>
+        <div class="who-card"><div class="who-icon">⚡</div><div class="who-label">Advanced Athletes</div></div>
+        <div class="who-card"><div class="who-icon">⚽</div><div class="who-label">Sports Players</div></div>
+        <div class="who-card"><div class="who-icon">🥊</div><div class="who-label">Martial Artists</div></div>
+        <div class="who-card"><div class="who-icon">🥦</div><div class="who-label">Vegetarians</div></div>
+        <div class="who-card"><div class="who-icon">👩</div><div class="who-label">Women</div></div>
+        <div class="who-card"><div class="who-icon">🧓</div><div class="who-label">Older Adults</div></div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:4rem">
+      <div class="section-label">Product Selection</div>
+      <h2 class="section-title">Which Creatine To Buy</h2>
+      <div class="section-divider"></div>
+      <div class="compare-grid">
+        <div class="compare-card best">
+          <div class="best-badge">⭐ Best Choice</div>
+          <div class="cc-title">Creatine Monohydrate</div>
+          <div class="cc-rating"><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span><span>⭐</span></div>
+          <div class="cc-desc">The gold standard. Backed by 30+ years of research, the cheapest option, and the most effective. Every other form is judged against this one. If a product claims to be "better" — ask for the evidence.</div>
+        </div>
+        <div class="compare-card">
+          <div class="cc-title">Creatine HCL</div>
+          <div class="cc-rating"><span>⭐</span><span>⭐</span><span>⭐</span><span>☆</span><span>☆</span></div>
+          <div class="cc-desc">Claims better absorption, allowing a smaller dose. Research is limited and does not convincingly demonstrate superiority over monohydrate. Significantly more expensive.</div>
+        </div>
+        <div class="compare-card">
+          <div class="cc-title">Kre-Alkalyn / Others</div>
+          <div class="cc-rating"><span>⭐</span><span>⭐</span><span>☆</span><span>☆</span><span>☆</span></div>
+          <div class="cc-desc">Marketed with bold claims about stability and reduced bloating. Direct head-to-head studies show no meaningful advantage. Primarily a marketing exercise at a premium price.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== MYTHS / DOSAGE TIMING ===== -->
+<section id="myths">
+  <div class="section-inner">
+    <div class="reveal" style="margin-bottom:4rem">
+      <div class="section-label">Protocol</div>
+      <h2 class="section-title">Dosage</h2>
+      <div class="section-divider"></div>
+      <div class="dose-options">
+        <div class="dose-option">
+          <div class="dose-label">Option 1 — Loading Protocol</div>
+          <div class="dose-title">Load Fast</div>
+          <div class="dose-steps">
+            <div class="dose-step"><div class="ds-num">1</div><div class="ds-text"><strong>20g / day</strong> Split into 4 × 5g doses. Duration: 5–7 days.</div></div>
+            <div class="dose-step"><div class="ds-num">2</div><div class="ds-text"><strong>Maintenance: 3–5g daily</strong> Continue indefinitely after the loading phase.</div></div>
+          </div>
+          <p style="font-size:0.76rem;color:var(--text3);margin-top:1.5rem">Reaches full muscle saturation faster. Loading is optional — not essential.</p>
+        </div>
+        <div class="dose-option">
+          <div class="best-badge">⭐ Best Choice</div>
+          <div class="dose-label">Option 2 — Steady Protocol</div>
+          <div class="dose-title">Consistent</div>
+          <div class="dose-steps">
+            <div class="dose-step"><div class="ds-num">1</div><div class="ds-text"><strong>3–5g daily</strong> Start this from day one. No loading required.</div></div>
+            <div class="dose-step"><div class="ds-num">2</div><div class="ds-text"><strong>Full saturation in 3–4 weeks</strong> Same end result. Just takes slightly longer.</div></div>
+          </div>
+          <p style="font-size:0.76rem;color:var(--text3);margin-top:1.5rem">The simpler, equally effective approach. Preferred by most users.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:4rem">
+      <div class="section-label">Timing</div>
+      <h2 class="section-title">Best Time To Take It</h2>
+      <div class="section-divider"></div>
+      <div class="timing-grid">
+        <div class="timing-card" onclick="setTiming(this)">
+          <div class="tc-icon">🌅</div>
+          <div class="tc-label">Morning</div>
+          <div class="tc-note">Good for establishing routine. Works well on rest days.</div>
+        </div>
+        <div class="timing-card" onclick="setTiming(this)">
+          <div class="tc-icon">⚡</div>
+          <div class="tc-label">Pre-Workout</div>
+          <div class="tc-note">Convenient pairing. Some evidence suggests slight benefit.</div>
+        </div>
+        <div class="timing-card active" onclick="setTiming(this)">
+          <div class="tc-icon">💪</div>
+          <div class="tc-label">Post-Workout</div>
+          <div class="tc-note">Favoured in research. Muscles are primed for uptake.</div>
+        </div>
+        <div class="timing-card" onclick="setTiming(this)">
+          <div class="tc-icon">🌙</div>
+          <div class="tc-label">Night</div>
+          <div class="tc-note">Perfectly effective. Consistency matters more than exact timing.</div>
+        </div>
+      </div>
+      <div class="timing-conclusion reveal">
+        <p><strong>Bottom line:</strong> The best time to take creatine is simply the time you'll consistently remember.</p>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:4rem">
+      <div class="section-label">Method</div>
+      <h2 class="section-title">How To Take It</h2>
+      <div class="section-divider"></div>
+      <div class="drinks-grid">
+        <div class="drink-card"><div class="drink-icon">💧</div><div class="drink-label">Water</div></div>
+        <div class="drink-card"><div class="drink-icon">🥛</div><div class="drink-label">Protein Shake</div></div>
+        <div class="drink-card"><div class="drink-icon">🍼</div><div class="drink-label">Milk</div></div>
+        <div class="drink-card"><div class="drink-icon">🍊</div><div class="drink-label">Juice</div></div>
+        <div class="drink-card"><div class="drink-icon">🥤</div><div class="drink-label">Smoothie</div></div>
+        <div class="drink-card"><div class="drink-icon">☕</div><div class="drink-label">Coffee</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ / HYDRATION + TIMELINE ===== -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="reveal" style="margin-bottom:5rem">
+      <div class="section-label">Hydration</div>
+      <h2 class="section-title">Stay Hydrated</h2>
+      <div class="section-divider"></div>
+      <div class="hydration-section">
+        <div class="water-bottle-wrap">
+          <div style="text-align:center">
+            <div class="water-bottle" id="water-bottle">
+              <div class="water-fill" id="water-fill"></div>
+            </div>
+            <div style="margin-top:0.75rem;font-size:0.72rem;color:var(--text3);letter-spacing:0.05em">Optimal Hydration</div>
+          </div>
+        </div>
+        <div class="hydration-text">
+          <h3>Creatine Draws Water Into Muscle Cells</h3>
+          <p>Not out of your body. This is a common misconception. The water moves intracellularly — into the muscle tissue where it supports cell volumisation and an anabolic environment.</p>
+          <p>You do not need to drink extraordinary amounts of water. Simply maintain good hydration because proper hydration always supports performance and recovery regardless of supplementation.</p>
+          <p>Aim for adequate daily intake based on your body weight and training intensity. Darker urine is your signal to drink more.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="section-label">Expectations</div>
+      <h2 class="section-title">Results Timeline</h2>
+      <div class="section-divider"></div>
+      <div class="timeline">
+        <div class="timeline-item" onclick="setTimeline(this)">
+          <div class="tl-week">Week 1</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><div class="tl-title">Initial Response</div><div class="tl-desc">Intracellular water uptake begins. You may notice a slight increase in body weight (0.5–1kg). This is water in muscle cells — normal and expected.</div></div>
+        </div>
+        <div class="timeline-item" onclick="setTimeline(this)">
+          <div class="tl-week">Week 2</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><div class="tl-title">Muscle Saturation Builds</div><div class="tl-desc">Creatine stores continue accumulating. You may begin to notice improved endurance within sets and slightly shorter recovery between efforts.</div></div>
+        </div>
+        <div class="timeline-item active" onclick="setTimeline(this)">
+          <div class="tl-week">Week 3</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><div class="tl-title">Noticeable Performance Shift</div><div class="tl-desc">Most users report clearer strength improvements. More reps, heavier weights, faster recovery between sets. The effects become measurable in training logs.</div></div>
+        </div>
+        <div class="timeline-item" onclick="setTimeline(this)">
+          <div class="tl-week">Week 4</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><div class="tl-title">Full Saturation</div><div class="tl-desc">Muscle creatine stores are fully saturated. You are now operating at maximum benefit from supplementation. Maintain with 3–5g daily.</div></div>
+        </div>
+        <div class="timeline-item" onclick="setTimeline(this)">
+          <div class="tl-week">Week 8+</div>
+          <div class="tl-dot"></div>
+          <div class="tl-content"><div class="tl-title">Compounding Gains</div><div class="tl-desc">The real benefits emerge here. Greater training volume consistently applied over weeks compounds into meaningful strength and muscle growth beyond what creatine alone achieves.</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT / MISTAKES ===== -->
+<section id="about">
+  <div class="section-inner">
+    <div class="reveal" style="margin-bottom:5rem">
+      <div class="section-label">Common Errors</div>
+      <h2 class="section-title">Biggest Mistakes</h2>
+      <div class="section-divider"></div>
+      <div class="mistakes-grid">
+        <div class="mistake-card reveal"><div class="mc-icon">⚠️</div><div class="mc-title">Skipping Days</div><div class="mc-desc">Consistency is everything. Missing doses slows saturation and disrupts the benefits you're building toward.</div></div>
+        <div class="mistake-card reveal" style="transition-delay:.08s"><div class="mc-icon">💸</div><div class="mc-title">Buying Expensive Creatine</div><div class="mc-desc">You are paying for marketing. Basic creatine monohydrate outperforms premium-branded products in study after study.</div></div>
+        <div class="mistake-card reveal" style="transition-delay:.16s"><div class="mc-icon">⏳</div><div class="mc-title">Expecting Overnight Results</div><div class="mc-desc">Creatine is not a drug. It is a substrate that accumulates over weeks. Discipline beats impatience every time.</div></div>
+        <div class="mistake-card reveal" style="transition-delay:.24s"><div class="mc-icon">📉</div><div class="mc-title">Taking Too Little</div><div class="mc-desc">Sub-therapeutic doses don't saturate muscle stores. 3–5g daily is the evidence-based standard — stay in range.</div></div>
+        <div class="mistake-card reveal" style="transition-delay:.32s"><div class="mc-icon">🚫</div><div class="mc-title">Believing Myths</div><div class="mc-desc">Kidney damage. Steroids. Hair loss. These claims range from false to highly overstated. Read the actual studies.</div></div>
+        <div class="mistake-card reveal" style="transition-delay:.4s"><div class="mc-icon">🛋️</div><div class="mc-title">Not Training Properly</div><div class="mc-desc">Creatine amplifies training. Without real training stimulus, there is nothing to amplify. The work remains essential.</div></div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:5rem">
+      <div class="section-label">Myth vs Fact</div>
+      <h2 class="section-title">Separating Truth From Fiction</h2>
+      <div class="section-divider"></div>
+      <p style="color:var(--text2);margin-bottom:2rem;font-size:0.88rem">Hover or tap any card to reveal the verdict.</p>
+      <div class="myths-grid">
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><div class="flip-myth">Creatine damages kidneys</div><div class="flip-tag">Tap to reveal</div></div>
+            <div class="flip-back"><div class="flip-verdict false">FALSE</div><div class="flip-fact">Extensive research in healthy adults shows no negative impact on kidney function at recommended doses.</div></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><div class="flip-myth">Creatine is a steroid</div><div class="flip-tag">Tap to reveal</div></div>
+            <div class="flip-back"><div class="flip-verdict false">FALSE</div><div class="flip-fact">Creatine is a naturally occurring amino acid derivative found in meat and fish. It is not a hormone or anabolic steroid.</div></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><div class="flip-myth">Creatine causes dehydration</div><div class="flip-tag">Tap to reveal</div></div>
+            <div class="flip-back"><div class="flip-verdict false">FALSE</div><div class="flip-fact">Creatine increases intracellular water retention. Controlled studies show no increased risk of dehydration or cramping.</div></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><div class="flip-myth">Creatine causes hair loss</div><div class="flip-tag">Tap to reveal</div></div>
+            <div class="flip-back"><div class="flip-verdict inconclusive">INCONCLUSIVE</div><div class="flip-fact">One study found increased DHT (linked to hair loss). Results have not been replicated. Evidence remains weak and inconclusive.</div></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><div class="flip-myth">You need to cycle creatine</div><div class="flip-tag">Tap to reveal</div></div>
+            <div class="flip-back"><div class="flip-verdict false">FALSE</div><div class="flip-fact">No evidence supports cycling on and off creatine. Long-term continuous use is safe and maintains muscle saturation.</div></div>
+          </div>
+        </div>
+        <div class="flip-card">
+          <div class="flip-inner">
+            <div class="flip-front"><div class="flip-myth">Only men should use creatine</div><div class="flip-tag">Tap to reveal</div></div>
+            <div class="flip-back"><div class="flip-verdict false">FALSE</div><div class="flip-fact">Research confirms women benefit equally from creatine supplementation in strength, performance, and potentially cognitive health.</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal" style="margin-bottom:5rem">
+      <div class="section-label">Safety</div>
+      <h2 class="section-title">Side Effects</h2>
+      <div class="section-divider"></div>
+      <div class="traffic-grid">
+        <div class="traffic-card">
+          <div class="traffic-dot green"></div>
+          <div class="traffic-title">Normal</div>
+          <ul class="traffic-list">
+            <li>Slight weight gain (water in muscle cells)</li>
+            <li>No change in urine colour with good hydration</li>
+            <li>Fuller, slightly harder muscles</li>
+            <li>All expected and harmless</li>
+          </ul>
+        </div>
+        <div class="traffic-card">
+          <div class="traffic-dot yellow"></div>
+          <div class="traffic-title">Minor Digestive Issues</div>
+          <ul class="traffic-list">
+            <li>Bloating if taken on an empty stomach</li>
+            <li>Mild GI discomfort at high loading doses</li>
+            <li>Solution: split doses, take with food or switch to smaller daily dose</li>
+          </ul>
+        </div>
+        <div class="traffic-card">
+          <div class="traffic-dot red"></div>
+          <div class="traffic-title">Consult Your Doctor If…</div>
+          <ul class="traffic-list">
+            <li>You have pre-existing kidney disease</li>
+            <li>You are on prescription medication</li>
+            <li>You experience unusual or persistent symptoms</li>
+            <li>You have a relevant medical history</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="section-label">Purchase Checklist</div>
+      <h2 class="section-title">Buying Guide</h2>
+      <div class="section-divider"></div>
+      <div class="buying-cols">
+        <div class="buying-col choose">
+          <div class="buying-col-title">✓ Choose</div>
+          <ul class="buying-list">
+            <li>100% Creatine Monohydrate — nothing else in the ingredient list</li>
+            <li>Third-party tested for purity (Informed Sport, NSF certified)</li>
+            <li>Affordable, unflavoured powder — no need to pay a premium</li>
+            <li>Simple, honest branding without performance claims</li>
+          </ul>
+        </div>
+        <div class="buying-col avoid">
+          <div class="buying-col-title">✕ Avoid</div>
+          <ul class="buying-list">
+            <li>Proprietary blends hiding creatine dose behind a "matrix"</li>
+            <li>"Advanced" or "enhanced" formulas with no supporting research</li>
+            <li>Extremely expensive products leveraging fear of "cheap" creatine</li>
+            <li>Products stacking creatine with unnecessary stimulants</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT / CHEAT SHEET + ABOUT ===== -->
+<section id="contact">
+  <div class="section-inner">
+    <div class="reveal" style="margin-bottom:5rem">
+      <div class="section-label">Summary</div>
+      <h2 class="section-title">Quick Cheat Sheet</h2>
+      <div class="section-divider"></div>
+      <div class="cheat-grid">
+        <div class="cheat-card reveal"><div class="cheat-label">Daily Dose</div><div class="cheat-value">3–5g</div><div class="cheat-note">Per day, every day. Non-negotiable for saturation.</div></div>
+        <div class="cheat-card reveal" style="transition-delay:.06s"><div class="cheat-label">Best Type</div><div class="cheat-value">Monohydrate</div><div class="cheat-note">The only form with decades of supporting evidence.</div></div>
+        <div class="cheat-card reveal" style="transition-delay:.12s"><div class="cheat-label">Timing</div><div class="cheat-value">Anytime</div><div class="cheat-note">Post-workout has slight edge. Consistency beats timing.</div></div>
+        <div class="cheat-card reveal" style="transition-delay:.18s"><div class="cheat-label">Hydration</div><div class="cheat-value">Normal</div><div class="cheat-note">Adequate daily intake. No need to over-hydrate.</div></div>
+        <div class="cheat-card reveal" style="transition-delay:.24s"><div class="cheat-label">With Protein</div><div class="cheat-value">Ideal</div><div class="cheat-note">Protein supports the muscle growth creatine enables.</div></div>
+        <div class="cheat-card reveal" style="transition-delay:.3s"><div class="cheat-label">Loading</div><div class="cheat-value">Optional</div><div class="cheat-note">Speeds saturation but same result achieved over 3–4 weeks.</div></div>
+        <div class="cheat-card reveal" style="transition-delay:.36s"><div class="cheat-label">Cycling</div><div class="cheat-value">Not needed</div><div class="cheat-note">Take it indefinitely. No evidence supports cycling off.</div></div>
+        <div class="cheat-card reveal" style="transition-delay:.42s"><div class="cheat-label">Full Effects</div><div class="cheat-value">Week 3–4</div><div class="cheat-note">Maximum saturation and measurable performance gains.</div></div>
+      </div>
+    </div>
+
+    <div class="reveal">
+      <div class="section-label">The Creator</div>
+      <h2 class="section-title">The Mind Behind QUWA'A</h2>
+      <div class="section-divider"></div>
+      <div class="about-grid">
+<div class="about-photo">
+    <img src="C:\Users\Rayhan\Desktop\website\quwaa pic.jpeg" alt="Rayhan">
+</div>
+        <div class="about-text">
+          <p>QUWA'A exists for one reason: to give men access to honest, science-backed fitness knowledge.</p>
+          <p>No gimmicks. No overpriced supplements. No fear-based marketing.</p>
+          <p>Only practical information that helps you build a stronger body, a healthier lifestyle, and the discipline to become the best version of yourself.</p>
+          <p>Every guide is built around evidence — not trends — so you can stop wasting time chasing misinformation and start making measurable progress.</p>
+          <div class="about-icons">
+            <div class="about-icon-card"><div class="aic-icon">🔬</div><div class="aic-label">Science First</div></div>
+            <div class="about-icon-card"><div class="aic-icon">📊</div><div class="aic-label">Evidence Based</div></div>
+            <div class="about-icon-card"><div class="aic-icon">💪</div><div class="aic-label">Built For Men</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ===== FINAL SECTION ===== -->
+<div class="final-section">
+  <div class="section-inner">
+    <div class="quote-block reveal">
+      <div class="quote-text">"Discipline builds the body. Consistency builds the man."</div>
+      <div class="quote-attr">— QUWA'A</div>
+    </div>
+    <div class="section-divider" style="margin:0 auto 2.5rem"></div>
+    <div class="final-body reveal">
+      <p>Now you understand what creatine is, how it works, and how to use it correctly.</p>
+      <p>Knowledge only becomes valuable when you apply it.</p>
+      <p><strong>Stay consistent. Train hard. Build a stronger version of yourself.</strong></p>
+    </div>
+  </div>
+</div>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="logo">QUWA'A</div>
+  <div class="footer-tagline">Building Stronger Men</div>
+  <div class="footer-socials">
+   <a class="social-btn" href="https://www.instagram.com/quwaa.official/" target="_blank" rel="noopener" aria-label="Instagram">
+    <i class="fa-brands fa-instagram"></i>
+</a>
+
+<a class="social-btn" href="mailto:quwaa.official@gmail.com" aria-label="Email">
+    <i class="fa-solid fa-envelope"></i>
+</a>
+  </div>
+  <div><a class="email-link" href="mailto:quwaa.official@gmail.com">quwaa.official@gmail.com</a></div>
+  <div class="copyright">© QUWA'A. All rights reserved.</div>
+</footer>
+
+<script>
+// ===== LOADER =====
+window.addEventListener('load', () => {
+  const bar = document.getElementById('loader-bar');
+  bar.style.width = '100%';
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('done');
+    initAnimations();
+  }, 900);
+});
+
+// ===== THEME =====
+const toggle = document.getElementById('theme-toggle');
+
+let dark = true;
+
+// Set dark theme immediately when the page loads
+document.documentElement.setAttribute('data-theme', 'dark');
+toggle.textContent = '☀️';
+
+toggle.addEventListener('click', () => {
+    dark = !dark;
+
+    document.documentElement.setAttribute(
+        'data-theme',
+        dark ? 'dark' : 'light'
+    );
+
+    toggle.textContent = dark ? '☀️' : '🌙';
+});
+
+// ===== SCROLL PROGRESS =====
+window.addEventListener('scroll', () => {
+  const p = (window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100;
+  document.getElementById('scroll-progress').style.width = p + '%';
+  // Back to top
+  document.getElementById('back-top').classList.toggle('visible', window.scrollY > 500);
+  // Active nav
+  updateNav();
+});
+
+// ===== ACTIVE NAV =====
+function updateNav() {
+  const sections = document.querySelectorAll('section[id], div.final-section');
+  const links = document.querySelectorAll('.nav-links a');
+  let current = '';
+  sections.forEach(s => {
+    if (window.scrollY >= s.offsetTop - 120) current = s.id || 'contact';
+  });
+  links.forEach(l => {
+    l.classList.toggle('active', l.getAttribute('href') === '#' + current);
+  });
+}
+
+// ===== REVEAL ON SCROLL =====
+function initAnimations() {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('visible');
+        // Counters
+        if (e.target.querySelector('[data-count]')) {
+          e.target.querySelectorAll('[data-count]').forEach(animateCounter);
+        }
+        // Water bottle
+        if (e.target.id === 'water-bottle' || e.target.closest && e.target.closest('#water-bottle')) {
+          document.getElementById('water-fill').style.height = '75%';
+        }
+        // Energy flow
+        if (e.target.id === 'energy-flow') animateEnergyFlow();
+      }
+    });
+  }, { threshold: 0.15 });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
+  document.getElementById('water-bottle') && observer.observe(document.getElementById('water-bottle'));
+  document.getElementById('energy-flow') && observer.observe(document.getElementById('energy-flow'));
+}
+
+// ===== COUNTER ANIMATION =====
+function animateCounter(el) {
+  const target = parseInt(el.dataset.count);
+  if (!target) return;
+  const suffix = el.dataset.suffix || '';
+  const duration = 1800;
+  const start = performance.now();
+  const update = (now) => {
+    const elapsed = now - start;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    el.textContent = Math.floor(eased * target) + suffix;
+    if (progress < 1) requestAnimationFrame(update);
+  };
+  requestAnimationFrame(update);
+}
+
+// ===== ENERGY FLOW ANIMATION =====
+function animateEnergyFlow() {
+  const nodes = document.querySelectorAll('#energy-flow .ef-node');
+  nodes.forEach((n, i) => {
+    setTimeout(() => n.classList.add('active'), i * 250);
+  });
+}
+
+// ===== TIMING CARDS =====
+function setTiming(el) {
+  document.querySelectorAll('.timing-card').forEach(c => c.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// ===== TIMELINE =====
+function setTimeline(el) {
+  document.querySelectorAll('.timeline-item').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+}
+
+// ===== MOBILE MENU =====
+function toggleMobile() {
+  document.getElementById('mobile-menu').classList.toggle('open');
+}
+function closeMobile() {
+  document.getElementById('mobile-menu').classList.remove('open');
+}
+
+// ===== FLIP CARDS MOBILE =====
+document.querySelectorAll('.flip-card').forEach(card => {
+  card.addEventListener('click', () => card.classList.toggle('flipped'));
+});
+
+// ===== SMOOTH CTA =====
+document.getElementById('cta-btn').addEventListener('click', (e) => {
+  e.preventDefault();
+  document.getElementById('guide').scrollIntoView({ behavior: 'smooth' });
+});
+
+// ===== WATER BOTTLE TRIGGER =====
+const wbObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) document.getElementById('water-fill').style.height = '75%';
+  });
+}, { threshold: 0.5 });
+const wb = document.getElementById('water-bottle');
+if (wb) wbObs.observe(wb);
+
+// ===== STAT CARDS TRIGGER =====
+const statObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('[data-count]').forEach(animateCounter);
+    }
+  });
+}, { threshold: 0.4 });
+document.querySelectorAll('#trust').forEach(s => statObs.observe(s));
+</script>
+</body>
+</html>
